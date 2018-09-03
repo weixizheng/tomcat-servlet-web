@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/common-servlet-web.iml" filepath="$PROJECT_DIR$/common-servlet-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tomcat-servlet-web.iml" filepath="$PROJECT_DIR$/tomcat-servlet-web.iml" />
     </modules>
   </component>
 </project>
