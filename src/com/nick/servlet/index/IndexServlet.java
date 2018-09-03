@@ -8,7 +8,10 @@ import java.io.IOException;
 
 public class IndexServlet extends HttpServlet {
 
-    public IndexServlet() {
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
         System.out.println("IndexServlet is init");
     }
 
@@ -19,7 +22,7 @@ public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.setAttribute("name", "Nick");
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }
