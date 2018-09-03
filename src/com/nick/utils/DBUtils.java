@@ -14,9 +14,7 @@ public final class DBUtils {
         try {
             Class.forName(driver);
             conn = DriverManager.getConnection(url, user, password);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -39,21 +37,5 @@ public final class DBUtils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args){
-        for(int i =0; i<10; i++) {
-            new Thread() {
-                @Override
-                public void run() {
-                    try {
-                        System.out.println(getConnection());
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }.start();
-        }
-
     }
 }
