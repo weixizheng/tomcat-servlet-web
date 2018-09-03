@@ -18,7 +18,9 @@ public class UserPrivilegeDAO extends BaseDAO<Privilege> {
 
     public List<Privilege> getUserRoleByUser(User user) {
         String sql = "SELECT r.* FROM UserRole ur LEFT JOIN Role r ON ur.roleId = r.roleId WHERE userId = ?";
-        return super.findByParam(sql, new ArrayList());
+        List param = new ArrayList();
+        param.add(user.getUserId());
+        return super.findByParam(sql, param);
     }
 
 }
